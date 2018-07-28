@@ -8,3 +8,8 @@ body {
 main {
     max-width: 900px;
 }
+
+input, button {
+    padding: .5em;
+    border: 1px black solid;
+}
