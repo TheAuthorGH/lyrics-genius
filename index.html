@@ -5,22 +5,48 @@
 <head>
 	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script type="text/javascript" src="http://tracking.musixmatch.com/t1.0/AMa6hJCIEzn1v8RuOP"></script>
+
+	<script src="scripts/frontend.js"></script>
 </head>
 
 <body>
 
-	<header role="banner"></header>
+	<header role="banner">
+		<form class="view-element lyrics-lookup" viewid="12345">
+			<input type="text" name="query" id="lyrics-lookup-query-1" placeholder="Find lyrics..."/>
+			<button type="submit">Find</button>
+		</form>
+	</header>
 
 	<main role="main">
 
-		<form id="lyrics-lookup">
-			<label for="lyrics-lookup-query">Find Lyrics</label><input type="text" id="lyrics-lookup-query"/>
-			<button type="submit">Search</button>
-		</form>
-		
+		<section class="view-element" viewid="0" role="region">
+			<form class="lyrics-lookup">
+				<label for="lyrics-lookup-query-2">Search for lyrics, song names or artists: </label><input type="text" name="query" id="lyrics-lookup-query-2"/>
+				<button type="submit">Find</button>
+			</form>
+		</section>
+
+		<section id="lyrics-loading" class="view-element" viewid="1" role="region">
+			<h2>Loading...</h2>
+		</section>
+
+		<section id="lyrics-results" class="view-element" viewid="2" role="region">
+			<h2>Results</h2>
+			<div>
+				<div id="lyrics-selected-tracks">
+
+				</div>
+				<ul id="lyrics-results-list"></ul>
+			</div>
+		</section>
+
 	</main>
 
-	<footer role="contentinfo"></footer>
+	<footer role="contentinfo">
+
+	</footer>
 
 </body>
 
