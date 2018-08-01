@@ -1,5 +1,8 @@
 body {
+    background-color: #111;
+    color: #FFF;
     font-family: 'Helvetica Neue', Helvetica, sans-serif;
+
     display: flex;
     flex-direction: column;
     align-items: center;
