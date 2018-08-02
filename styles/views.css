@@ -1,0 +1,60 @@
+/* Welcome View */
+
+#lyrics-welcome {
+	padding: 16px;
+}
+
+#lyrics-welcome > form {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#lyrics-welcome > form > * {
+	margin: 16px 0px;
+}
+
+/* Loading View */
+
+#lyrics-loading {
+	color: #AAA;
+}
+
+/* Results View */
+
+#lyrics-results {
+	width: 100%;
+}
+
+#lyrics-results h2 {
+	font-size: 20px;
+	margin: 16px;
+}
+
+#lyrics-results-list {
+	display: flex;
+	flex-direction: column;
+}
+
+#lyrics-results-list > li {
+	flex: 1;
+	display: flex;
+	justify-content: space-between;
+
+	padding: 8px;
+}
+
+#lyrics-results-list > li:nth-child(odd) {
+	background-color: #333;
+}
+
+#lyrics-results-list > li > div {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+#lyrics-results-list .track-name {
+	font-weight: bold;
+}
