@@ -57,4 +57,9 @@
 
 #lyrics-results-list .track-name {
 	font-weight: bold;
+	font-size: 18px;
+}
+
+#lyrics-results-list .track-artist {
+	color: #CCC;
 }
