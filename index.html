@@ -24,11 +24,6 @@
 	<header role="banner">
 		<h1>Lyrics Genius</h1>
 
-		<form class="view-element lyrics-lookup" viewid="12345">
-			<input type="text" name="query" id="lyrics-lookup-query-1" placeholder="Find lyrics..." required/>
-			<button type="submit">Find</button>
-		</form>
-
 		<nav role="navigation">
 			<ul>
 				<li><a href="index.html">Start</a></li>
@@ -38,6 +33,11 @@
 	</header>
 
 	<main role="main">
+
+		<form class="view-element lyrics-lookup" viewid="12345">
+			<input type="text" name="query" id="lyrics-lookup-query-1" placeholder="Find lyrics..." required/>
+			<button type="submit">Find</button>
+		</form>
 
 		<section id="lyrics-welcome" class="view-element" viewid="0" role="region">
 			<form class="lyrics-lookup">
@@ -51,7 +51,7 @@
 		</section>
 
 		<section id="lyrics-results" class="view-element" viewid="2" role="region">
-			<h2>Results</h2>
+			<h2>Search Results</h2>
 			<div>
 				<div id="lyrics-selected-tracks"></div>
 				<ul id="lyrics-results-list"></ul>
