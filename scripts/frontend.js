@@ -70,8 +70,7 @@ function initResultsView(results) {
 					<span class="track-artist">${track.artist}</span>
 				</div>
 				<div>
-					<button class="track-select">Select</button>
-					<button class="track-analyze">Analyze</button>
+					<button class="track-select"><span class="fas fa-plus"></span></button>
 				</div>
 			</li>`);
 }
