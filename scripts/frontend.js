@@ -101,7 +101,6 @@ function handleControls() {
 	handleResultsViewControls();
 
 	$('.lyrics-lookup').submit(function(evt) {
-		/* Download the lyrics as well ? */
 		evt.preventDefault();
 		initLoadingView();
 		AJAXMANAGER.musixmatch('track.search', {q: $(this).find('input[name="query"]').val() },
