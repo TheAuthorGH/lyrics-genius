@@ -111,7 +111,7 @@ function handleControls() {
 				}
 				initResultsView(results.message.body.track_list.map(t => new Track(t)));
 			},
-			() => initErrorView("Sorry, we can't gather lyrics data right now."));
+			() => initErrorView("Error gathering lyrics."));
 	});
 }
 
