@@ -65,3 +65,11 @@
 #lyrics-results-list .track-artist {
 	color: #CCC;
 }
+
+#lyrics-error {
+	margin-top: 16px;
+	color: #CCC;
+	font-size: 18px;
+	text-align: center;
+	padding: 0px 16px;
+}

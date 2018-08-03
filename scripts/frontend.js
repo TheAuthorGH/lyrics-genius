@@ -58,6 +58,11 @@ function initLoadingView() {
 function initResultsView(results) {
 	VIEWMANAGER.view(2);
 	$('#lyrics-results-list').empty();
+	if(results.length === 0) {
+		VIEWMANAGER.view(5);
+		$('#lyrics-error > p').text('Sorry, no results found! Please try something different!');
+		return;
+	}
 	for(let track of results)
 		$('#lyrics-results-list').append(`
 			<li>
