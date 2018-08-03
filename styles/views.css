@@ -69,6 +69,13 @@
 	color: #CCC;
 }
 
+#lyrics-results-list button.track-select {
+    width: 34px;
+    height: 34px;
+}
+
+/* Error View */
+
 #lyrics-error {
 	margin-top: 16px;
 	color: #CCC;
