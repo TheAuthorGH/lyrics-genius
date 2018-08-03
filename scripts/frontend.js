@@ -59,8 +59,7 @@ function initResultsView(results) {
 	VIEWMANAGER.view(2);
 	$('#lyrics-results-list').empty();
 	if(results.length === 0) {
-		VIEWMANAGER.view(5);
-		$('#lyrics-error > p').text('Sorry, no results found! Please try something different!');
+		initErrorView('Sorry, no results found! Please try something different!');
 		return;
 	}
 	for(let track of results)
@@ -93,7 +92,7 @@ function initAnalysisView(lyrics) {
 
 function initErrorView(message) {
 	VIEWMANAGER.view(5);
-	$('#lyrics-error > h2').text(message);
+	$('#lyrics-error > p').text(message);
 }
 
 // General
