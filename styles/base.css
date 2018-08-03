@@ -60,13 +60,13 @@ nav > ul > li:not(:last-child) {
 	margin-right: 8px;
 }
 
-nav a {
+nav li {
 	text-decoration: none;
-	font-weight: bold;
 	color: #DDD;
+	cursor: pointer;
 }
 
-nav a:hover {
+nav li:hover {
 	color: #FFF;
 }
 
