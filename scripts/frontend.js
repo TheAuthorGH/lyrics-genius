@@ -38,6 +38,7 @@ const AJAXMANAGER = {
 
 const TRACKMANAGER = {
 	_selected: [],
+	_maxSelected: 4,
 	_cached: [],
 	cache: function(track) {
 		if(track && !this._cached.find(t => t.equals(track)))
@@ -66,6 +67,9 @@ const TRACKMANAGER = {
 		if(index)
 			return this._cached[index];
 		return this._selected.length;
+	},
+	canSelect: function() {
+		return this._maxSelected > this.selected();
 	},
 	clear: function() {
 		this.clearCache();
@@ -126,13 +130,16 @@ function handleResultsViewControls() {
 	$('#lyrics-results-list')
 		.on('click', '.track-select', function(evt) {
 			const button = $(this);
+			const track = TRACKMANAGER.cached(button.closest('li').attr('trackid'));
+			if(!button.hasClass('selected')) {
+				if(!TRACKMANAGER.canSelect())
+					return;
+				TRACKMANAGER.select(track);
+			} else {
+				TRACKMANAGER.undoSelect(track);
+			}
 			button.toggleClass('selected');
 			button.find('span').toggleClass('fa-plus').toggleClass('fa-check');
-			const track = TRACKMANAGER.cached(button.closest('li').attr('trackid'));
-			if(button.hasClass('selected'))
-				TRACKMANAGER.select(track);
-			else
-				TRACKMANAGER.undoSelect(track);
 		})
 		.on('click', '.track-name', function() {
 			initAnalysisView(TRACKMANAGER.cached[$(this).closest('li').attr('trackid')]);
