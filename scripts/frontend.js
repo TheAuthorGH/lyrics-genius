@@ -36,24 +36,70 @@ const AJAXMANAGER = {
 	}
 }
 
+const TRACKMANAGER = {
+	_selected: [],
+	_cached: [],
+	cache: function(track) {
+		if(track && !this._cached.find(t => t.equals(track)))
+			this._cached.push(track);
+		return this.cached();
+	},
+	undoCache: function(track) {
+		if(track)
+			this._cached.splice(this._cached.indexOf(track), 1);
+	},
+	cached: function(index) {
+		if(index)
+			return this._cached[index];
+		return this._cached.length;
+	},
+	select: function(track) {
+		if(track)
+			this._selected.push(track);
+		return this.selected();
+	},
+	undoSelect: function(track) {
+		if(track)
+			this._selected.splice(this._selected.indexOf(track), 1);	
+	},
+	selected: function(index) {
+		if(index)
+			return this._cached[index];
+		return this._selected.length;
+	},
+	clear: function() {
+		this.clearCache();
+		this.clearSelected();
+	},
+	clearCache: function() {
+		this._cached.length = 0;
+	},
+	clearSelected: function() {
+		this._selected.length = 0;
+	}
+}
+
 function Track(data) {
 	this.name = data.track.track_name;
 	this.artist = data.track.artist_name;
-	this.id = data.track.track_id;
+	this.equals = function(other) {
+		return this.name === other.name && this.artist === other.artist;
+	}
 }
 
-/* Start View */
+// Start View
+
 function initStartView() {
 	VIEWMANAGER.view(0);
 }
 
-/* Loading View */
+// Loading View
 
 function initLoadingView() {
 	VIEWMANAGER.view(1);
 }
 
-/* Results View */
+// Results View
 
 function initResultsView(results) {
 	VIEWMANAGER.view(2);
@@ -62,9 +108,9 @@ function initResultsView(results) {
 		initErrorView('Sorry, no results found! Please try something different!');
 		return;
 	}
-	for(let track of results)
+	for(let track of results) {
 		$('#lyrics-results-list').append(`
-			<li>
+			<li trackid="${TRACKMANAGER.cache(track) - 1}">
 				<div>
 					<span class="track-name">${track.name}</span>
 					<span class="track-artist">${track.artist}</span>
@@ -73,15 +119,29 @@ function initResultsView(results) {
 					<button class="track-select"><span class="fas fa-plus"></span></button>
 				</div>
 			</li>`);
+	}
 }
 
 function handleResultsViewControls() {
-	
+	$('#lyrics-results-list')
+		.on('click', '.track-select', function(evt) {
+			const button = $(this);
+			button.toggleClass('selected');
+			button.find('span').toggleClass('fa-plus').toggleClass('fa-check');
+			const track = TRACKMANAGER.cached(button.closest('li').attr('trackid'));
+			if(button.hasClass('selected'))
+				TRACKMANAGER.select(track);
+			else
+				TRACKMANAGER.undoSelect(track);
+		})
+		.on('click', '.track-name', function() {
+			initAnalysisView(TRACKMANAGER.cached[$(this).closest('li').attr('trackid')]);
+		});
 }
 
-/* Analysis */
+// Analysis
 
-function initAnalysisView(lyrics) {
+function initAnalysisView(track) {
 
 }
 

@@ -74,6 +74,10 @@
     height: 34px;
 }
 
+#lyrics-results-list button.track-select.selected {
+	background-color: #161;
+}
+
 /* Error View */
 
 #lyrics-error {
