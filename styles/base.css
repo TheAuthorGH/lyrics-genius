@@ -30,6 +30,10 @@ button:hover, button:focus {
 	background-color: #83F;
 }
 
+label {
+	margin: 0px 8px;
+}
+
 /* Header */
 
 header {
