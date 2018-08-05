@@ -179,6 +179,7 @@ function handleControls() {
 	$('.lyrics-lookup').submit(function(evt) {
 		evt.preventDefault();
 		initLoadingView();
+		TRACKMANAGER.clearCache();
 		AJAXMANAGER.musixmatch('track.search', {q: $(this).find('input[name="query"]').val() },
 			results => {
 				if(results.message.header.status_code != 200) {
