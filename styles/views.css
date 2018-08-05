@@ -78,6 +78,10 @@
 	background-color: #161;
 }
 
+#lyrics-results-list button.track-select.selected:hover {
+	background-color: #383;
+}
+
 /* Error View */
 
 #lyrics-error {
