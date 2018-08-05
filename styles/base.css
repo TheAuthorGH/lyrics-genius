@@ -21,12 +21,13 @@ input {
 button {
 	padding: 8px;
 	margin: 10px;
-	background-color: #611;
+	background-color: #60E;
+	border-radius: 5px;
 	cursor: pointer;
 }
 
 button:hover, button:focus {
-	background-color: #922;
+	background-color: #83F;
 }
 
 /* Header */
@@ -38,7 +39,7 @@ header {
 	height: 50px;
 	padding: 0px 16px;
 
-	background-color: #611;
+	background-color: #60E;
 
 	display: flex;
 	align-items: center;
@@ -62,6 +63,7 @@ nav > ul > li:not(:last-child) {
 
 nav li {
 	text-decoration: none;
+	font-size: 18px;
 	color: #DDD;
 	cursor: pointer;
 }
