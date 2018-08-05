@@ -120,7 +120,7 @@ function initResultsView(results) {
 					<span class="track-artist">${track.artist}</span>
 				</div>
 				<div>
-					<button class="track-select"><span class="fas fa-plus"></span></button>
+					<button class="track-select" aria-label="select track for comparison"><span class="fas fa-plus"></span></button>
 				</div>
 			</li>`);
 	}
@@ -161,6 +161,16 @@ function initErrorView(message) {
 	$('#lyrics-error > p').text(message);
 }
 
+// Help
+
+function displayHelp() {
+	$('#lyrics-help').show().prop('hidden', false);
+}
+
+function hideHelp() {
+	$('#lyrics-help').hide().prop('hidden', true);
+}
+
 // General
 
 function handleControls() {
@@ -179,11 +189,15 @@ function handleControls() {
 			},
 			() => initErrorView("Error gathering lyrics."));
 	});
+
+	$('#lyrics-help-open').click(displayHelp);
+	$('#lyrics-help-close').click(hideHelp);
+	hideHelp();
 }
 
-function initNPH() {
+function initLG() {
 	initStartView();
 	handleControls();
 }
 
-$(initNPH);
+$(initLG);

@@ -87,3 +87,47 @@
 	text-align: center;
 	padding: 0px 16px;
 }
+
+#lyrics-help {
+	position: fixed;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(20, 20, 20, .4);
+	padding: 32px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+}
+
+#lyrics-help > div {
+	position: relative;
+	background-color: #FFF;
+	color: #000;
+	box-shadow: 0px 0px 3px 2px #AAA;
+	border-radius: 5px;
+	padding: 32px 16px;
+	max-width: 650px;
+	max-height: 650px;
+}
+
+#lyrics-help h3 {
+	margin-bottom: 16px;
+}
+
+#lyrics-help-close {
+	position: absolute;
+	top: -25px;
+	right: -25px;
+	box-sizing: content-box;
+	height: 15px;
+	width: 15px;
+	color: #FFF;
+	box-shadow: 0px 0px 3px 2px #944;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
