@@ -131,10 +131,7 @@ function initResultsView(results) {
 }
 
 function updateSelectionControls() {
-	if(TRACKMANAGER.selected() > 0)
-		$('#lyrics-selection-counter').show().find('span').last().text(`${TRACKMANAGER.selected()}/${TRACKMANAGER.maxSelected()}`);
-	else 
-		$('#lyrics-selection-counter').hide().find('span').last().text('');
+	$('#lyrics-selection-counter').find('span').last().text(`${TRACKMANAGER.selected()}/${TRACKMANAGER.maxSelected()}`);
 }
 
 function handleResultsViewControls() {

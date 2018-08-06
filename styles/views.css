@@ -33,14 +33,14 @@
 }
 
 #lyrics-results-header {
+	padding: 16px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 }
 
 #lyrics-results-header h2 {
-	font-size: 20px;
-	margin: 16px;
+	font-size: 18px;
 }
 
 #lyrics-selection-counter {
