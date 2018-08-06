@@ -68,8 +68,11 @@ const TRACKMANAGER = {
 			return this._cached[index];
 		return this._selected.length;
 	},
+	maxSelected: function() {
+		return this._maxSelected;
+	},
 	canSelect: function() {
-		return this._maxSelected > this.selected();
+		return this.maxSelected() > this.selected();
 	},
 	clear: function() {
 		this.clearCache();
@@ -108,6 +111,7 @@ function initLoadingView() {
 function initResultsView(results) {
 	VIEWMANAGER.view(2);
 	$('#lyrics-results-list').empty();
+	updateSelectionCounter();
 	if(results.length === 0) {
 		initErrorView('Sorry, no results found! Please try something different!');
 		return;
@@ -126,6 +130,13 @@ function initResultsView(results) {
 	}
 }
 
+function updateSelectionCounter() {
+	if(TRACKMANAGER.selected() > 0)
+		$('#lyrics-selection-counter').show().find('span').last().text(`${TRACKMANAGER.selected()}/${TRACKMANAGER.maxSelected()}`);
+	else 
+		$('#lyrics-selection-counter').hide().find('span').last().text('');
+}
+
 function handleResultsViewControls() {
 	$('#lyrics-results-list')
 		.on('click', '.track-select', function(evt) {
@@ -138,6 +149,7 @@ function handleResultsViewControls() {
 			} else {
 				TRACKMANAGER.undoSelect(track);
 			}
+			updateSelectionCounter();
 			button.toggleClass('selected');
 			button.find('span').toggleClass('fa-plus').toggleClass('fa-check');
 		})

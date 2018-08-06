@@ -43,6 +43,16 @@
 	margin: 16px;
 }
 
+#lyrics-selection-counter {
+	background-color: #333;
+	padding: 8px;
+	border-radius: 5px;
+}
+
+#lyrics-selection-counter > span {
+	margin: 4px;
+}
+
 #lyrics-results-list {
 	display: flex;
 	flex-direction: column;
