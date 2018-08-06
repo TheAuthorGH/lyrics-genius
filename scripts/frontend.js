@@ -111,7 +111,7 @@ function initLoadingView() {
 function initResultsView(results) {
 	VIEWMANAGER.view(2);
 	$('#lyrics-results-list').empty();
-	updateSelectionCounter();
+	updateSelectionControls();
 	if(results.length === 0) {
 		initErrorView('Sorry, no results found! Please try something different!');
 		return;
@@ -119,7 +119,7 @@ function initResultsView(results) {
 	for(let track of results) {
 		$('#lyrics-results-list').append(`
 			<li trackid="${TRACKMANAGER.cache(track) - 1}">
-				<div>
+				<div class="track-meta">
 					<span class="track-name">${track.name}</span>
 					<span class="track-artist">${track.artist}</span>
 				</div>
@@ -130,7 +130,7 @@ function initResultsView(results) {
 	}
 }
 
-function updateSelectionCounter() {
+function updateSelectionControls() {
 	if(TRACKMANAGER.selected() > 0)
 		$('#lyrics-selection-counter').show().find('span').last().text(`${TRACKMANAGER.selected()}/${TRACKMANAGER.maxSelected()}`);
 	else 
@@ -149,11 +149,11 @@ function handleResultsViewControls() {
 			} else {
 				TRACKMANAGER.undoSelect(track);
 			}
-			updateSelectionCounter();
+			updateSelectionControls();
 			button.toggleClass('selected');
 			button.find('span').toggleClass('fa-plus').toggleClass('fa-check');
 		})
-		.on('click', '.track-name', function() {
+		.on('click', '.track-meta', function() {
 			initAnalysisView(TRACKMANAGER.cached[$(this).closest('li').attr('trackid')]);
 		});
 }
@@ -161,7 +161,7 @@ function handleResultsViewControls() {
 // Analysis
 
 function initAnalysisView(track) {
-
+	VIEWMANAGER.view(3);
 }
 
 // Comparison
