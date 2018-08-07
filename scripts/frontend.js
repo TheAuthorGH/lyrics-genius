@@ -110,14 +110,15 @@ function initLoadingView() {
 
 function initResultsView(results) {
 	VIEWMANAGER.view(2);
-	$('#lyrics-results-list').empty();
+	const view = $('#lyrics-results-list');
+	view.empty();
 	updateSelectionControls();
 	if(results.length === 0) {
 		initErrorView('Sorry, no results found! Please try something different!');
 		return;
 	}
 	for(let track of results) {
-		$('#lyrics-results-list').append(`
+		view.append(`
 			<li trackid="${TRACKMANAGER.cache(track) - 1}">
 				<div class="track-meta">
 					<span class="track-name">${track.name}</span>
@@ -151,7 +152,7 @@ function handleResultsViewControls() {
 			button.find('span').toggleClass('fa-plus').toggleClass('fa-check');
 		})
 		.on('click', '.track-meta', function() {
-			initAnalysisView(TRACKMANAGER.cached[$(this).closest('li').attr('trackid')]);
+			initAnalysisView(TRACKMANAGER.cached($(this).closest('li').attr('trackid')));
 		});
 }
 
@@ -159,6 +160,9 @@ function handleResultsViewControls() {
 
 function initAnalysisView(track) {
 	VIEWMANAGER.view(3);
+	const view = $('#lyrics-analysis');
+	view.find('.track-name').text(track.name)
+		.find('.track-artist').text(track.artist);
 }
 
 // Comparison
