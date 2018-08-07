@@ -1,96 +1,8 @@
-
-// Not the safest way to store api keys!
-APIKEYS = {
-	musixmatch: '5c128ccc9a0073a5b9f5d79fda27e664'
-}
-
 const VIEWMANAGER = {
 	_id: 0,
 	view: function(id) {
 		$(`.view-element[viewid*='${id}']`).show().prop('hidden', false);
 		$(`.view-element:not([viewid*='${id}'])`).hide().prop('hidden', true);
-	}
-}
-
-const AJAXMANAGER = {
-	lyricsOvh: function(artist, song, done, fail) {
-		$.ajax({url: `https://api.lyrics.ovh/v1/${artist}/${song}`})
-		.done(done)
-		.fail(fail);
-	},
-	musixmatch: function(method, data, done, fail) {
-		$.ajax({
-			type: 'GET',
-			url: 'https://api.musixmatch.com/ws/1.1/' + method,
-			data: Object.assign({
-				apikey: APIKEYS['musixmatch'],
-				format: 'jsonp',
-				callback: 'jsonpCallback'
-			}, data),
-			dataType: 'jsonp',
-			jsonpCallback: 'jsonpCallback',
-			contentType: 'application/json'
-		})
-		.done(done)
-		.fail(fail);
-	}
-}
-
-const TRACKMANAGER = {
-	_selected: [],
-	_maxSelected: 4,
-	_cached: [],
-	cache: function(track) {
-		if(track && !this._cached.find(t => t.equals(track)))
-			this._cached.push(track);
-		return this.cached();
-	},
-	undoCache: function(track) {
-		if(track)
-			this._cached.splice(this._cached.indexOf(track), 1);
-	},
-	cached: function(index) {
-		if(index)
-			return this._cached[index];
-		return this._cached.length;
-	},
-	select: function(track) {
-		if(track)
-			this._selected.push(track);
-		return this.selected();
-	},
-	undoSelect: function(track) {
-		if(track)
-			this._selected.splice(this._selected.indexOf(track), 1);	
-	},
-	selected: function(index) {
-		if(index)
-			return this._cached[index];
-		return this._selected.length;
-	},
-	maxSelected: function() {
-		return this._maxSelected;
-	},
-	canSelect: function() {
-		return this.maxSelected() > this.selected();
-	},
-	clear: function() {
-		this.clearCache();
-		this.clearSelected();
-	},
-	clearCache: function() {
-		this._cached.length = 0;
-	},
-	clearSelected: function() {
-		this._selected.length = 0;
-	}
-}
-
-function Track(data) {
-	this.name = data.track.track_name;
-	this.artist = data.track.artist_name;
-	this.equals = function(other) {
-		return this.name === other.name && this.artist === other.artist;
 	}
 }
 
@@ -208,10 +120,3 @@ function handleControls() {
 	$('#lyrics-help-close').click(hideHelp);
 	hideHelp();
 }
-
-function initLG() {
-	initStartView();
-	handleControls();
-}
-
-$(initLG);
