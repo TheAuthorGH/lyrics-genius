@@ -54,6 +54,10 @@ header h1 {
 	font-size: 24px;
 }
 
+header h1 > a {
+	text-decoration: none;
+}
+
 /* Navigation */
 
 nav > ul {
