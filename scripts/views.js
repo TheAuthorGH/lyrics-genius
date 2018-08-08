@@ -71,10 +71,27 @@ function handleResultsViewControls() {
 // Analysis
 
 function initAnalysisView(track) {
-	VIEWMANAGER.view(3);
+	initLoadingView();
 	const view = $('#lyrics-analysis');
-	view.find('.track-name').text(track.name)
-		.find('.track-artist').text(track.artist);
+	AJAXMANAGER.lyricsOvh(track.artist, track.name,
+		results => {
+			if(results.lyrics) {
+				VIEWMANAGER.view(3);
+				view.find('.track-name').text(track.name)
+					.find('.track-artist').text(track.artist);
+				const list = view.find('.track-analysis');
+				for(let entry of lyricsAnalysis(results.lyrics))
+					list.append(`
+						<li>
+							<span>${entry.title}</span>
+							<span>${entry.html}</span>
+						</li>`);
+			} else {
+				initErrorView("Sorry, there seem to be no lyrics to display.");
+			}
+		},
+		() => initErrorView("Sorry, we couldn't gather lyrics data for this song.")
+	);
 }
 
 // Comparison
@@ -108,12 +125,12 @@ function handleControls() {
 		AJAXMANAGER.musixmatch('track.search', {q: $(this).find('input[name="query"]').val() },
 			results => {
 				if(results.message.header.status_code != 200) {
-					initErrorView("Sorry, we can't gather lyrics data right now.");
+					initErrorView("Sorry, we can't gather song data right now.");
 					return;
 				}
 				initResultsView(results.message.body.track_list.map(t => new Track(t)));
 			},
-			() => initErrorView("Error gathering lyrics."));
+			() => initErrorView("Error gathering song data."));
 	});
 
 	$('#lyrics-help-open').click(displayHelp);
