@@ -1,19 +1,15 @@
-function wordArray(string) {
-	return string.split(' ');
-}
-
-function charArray(string) {
-	return string.split('');
-}
-
 function lyricsAnalysis(text) {
 	function entry(title, html) {
 		return {title: title, html: html};
 	};
-	const data = [];
 	const words = wordArray(text);
+	const wordsUnique = distinct(words);
 	const chars = charArray(text);
-	data.push(entry('Word Count', words.length));
-	data.push(entry('Character Count', chars.length));
-	return data;
+	return [
+		entry('Words', words.length),
+		entry('Words (Unique)', wordsUnique.length),
+		entry('Monotony', formatDecimal(words.length / wordsUnique.length, 2)),
+		entry('Most Frequent Word', frequency(words)[0].item),
+		entry('Characters', chars.length)
+	];
 }

@@ -98,6 +98,33 @@
 	background-color: #272;
 }
 
+/* Analysis View */
+
+#lyrics-analysis {
+	width: 100%;
+}
+
+#lyrics-analysis .track-meta {
+	font-weight: bold;
+	margin: 16px;
+	display: flex;
+	flex-direction: column;
+}
+
+#lyrics-analysis .track-analysis li {
+	padding: 8px;
+	display: flex;
+	justify-content: space-between;
+}
+
+#lyrics-analysis .track-analysis li > span:first-child {
+	
+}
+
+#lyrics-analysis .track-analysis li:nth-child(odd) {
+	background-color: #3A3A3A;
+}
+
 /* Error View */
 
 #lyrics-error {
@@ -107,6 +134,8 @@
 	text-align: center;
 	padding: 0px 16px;
 }
+
+/* Help Window */
 
 #lyrics-help {
 	position: fixed;

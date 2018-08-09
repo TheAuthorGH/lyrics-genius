@@ -78,9 +78,10 @@ function initAnalysisView(track) {
 		results => {
 			if(results.lyrics) {
 				VIEWMANAGER.view(3);
-				view.find('.track-name').text(track.name)
-					.find('.track-artist').text(track.artist);
+				view.find('.track-name').text(track.name);
+				view.find('.track-artist').text(track.artist);
 				const list = view.find('.track-analysis');
+				list.empty();
 				for(let entry of lyricsAnalysis(results.lyrics))
 					list.append(`
 						<li>
