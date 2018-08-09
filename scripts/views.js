@@ -92,7 +92,7 @@ function initAnalysisView(track) {
 				initErrorView("Sorry, there seem to be no lyrics to display.");
 			}
 		},
-		() => initErrorView("Sorry, we couldn't gather lyrics data for this song.")
+		() => initErrorView("Sorry, it seems we can't gather lyrics data right now.")
 	);
 }
 
