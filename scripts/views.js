@@ -50,6 +50,7 @@ function updateSelectionControls() {
 function handleResultsViewControls() {
 	$('#lyrics-results-list')
 		.on('click', '.track-select', function(evt) {
+			evt.stopPropagation();
 			const button = $(this);
 			const track = TRACKMANAGER.cached(button.closest('li').attr('trackid'));
 			if(!button.hasClass('selected')) {
@@ -63,7 +64,7 @@ function handleResultsViewControls() {
 			button.toggleClass('selected');
 			button.find('span').toggleClass('fa-plus').toggleClass('fa-check');
 		})
-		.on('click', '.track-meta', function() {
+		.on('click', 'li', function() {
 			initAnalysisView(TRACKMANAGER.cached($(this).closest('li').attr('trackid')));
 		});
 }

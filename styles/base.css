@@ -1,5 +1,5 @@
 body {
-	background-color: #222;
+	background-color: #303030;
 	color: #FFF;
 	font-family: 'Libre Franklin', 'Helvetica Neue', Helvetica, sans-serif;
 	font-size: 16px;
@@ -14,20 +14,20 @@ h1, h2, h3, h4 {
 }
 
 input {
-	padding: 6px;
+	padding: 8px;
 	border: 1px #FFF solid;
 }
 
 button {
 	padding: 8px;
 	margin: 10px;
-	background-color: #60E;
+	background-color: #733;
 	border-radius: 5px;
 	cursor: pointer;
 }
 
 button:hover, button:focus {
-	background-color: #83F;
+	background-color: #844;
 }
 
 label {
@@ -43,7 +43,7 @@ header {
 	height: 50px;
 	padding: 0px 16px;
 
-	background-color: #60E;
+	background-color: #733;
 
 	display: flex;
 	align-items: center;

@@ -10,20 +10,20 @@
 		border: 1px #FFF solid;
 		border-radius: 5px;
 		margin: 8px 0px;
+		cursor: pointer;
+	}
+	
+	#lyrics-results-list > li:hover {
+		background-color: #555 !important;
 	}
 
 	#lyrics-results-list .track-meta {
 		border-radius: 5px;
 		padding: 8px;
-		cursor: pointer;
 	}
 
 	#lyrics-results-list .track-meta > span {
 		margin: 4px;
-	}
-
-	#lyrics-results-list .track-meta:hover {
-		background-color: #333;
 	}
 
 }

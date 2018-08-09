@@ -67,7 +67,7 @@
 }
 
 #lyrics-results-list > li:nth-child(odd) {
-	background-color: #333;
+	background-color: #3A3A3A;
 }
 
 #lyrics-results-list > li > div {
@@ -95,7 +95,7 @@
 }
 
 #lyrics-results-list button.track-select.selected:hover {
-	background-color: #383;
+	background-color: #272;
 }
 
 /* Error View */
@@ -145,7 +145,7 @@
 	height: 15px;
 	width: 15px;
 	color: #FFF;
-	box-shadow: 0px 0px 3px 2px #75A;
+	box-shadow: 0px 0px 3px 2px #733;
 	border-radius: 50%;
 	display: flex;
 	align-items: center;
