@@ -1,5 +1,5 @@
 function wordArray(string) {
-	return string.split(/[ ,!.";:-]+/).map(w => w.toLowerCase());
+	return string.split(/[ ,!.";:\n\(\)-]+/).map(w => w.toLowerCase());
 }
 
 function charArray(string) {
@@ -23,7 +23,7 @@ function occurrences(array, item) {
 	return array.reduce((a, b) => a + (item === b), 0);
 }
 
-// Returns an array containing 
+// Returns an array containing item-appearances mappings for an array.
 function frequency(array) {
 	const result = [];
 	for(let i of distinct(array))
