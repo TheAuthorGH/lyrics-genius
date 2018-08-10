@@ -1,6 +1,11 @@
 function Track(data) {
-	this.name = data.track.track_name;
-	this.artist = data.track.artist_name;
+	if(data.track) {
+		this.name = data.track.track_name;
+		this.artist = data.track.artist_name;
+	} else {
+		this.name = "Unknown Name";
+		this.artist = "Unknown Artist";
+	}
 	this.equals = function(other) {
 		return this.name === other.name && this.artist === other.artist;
 	}
