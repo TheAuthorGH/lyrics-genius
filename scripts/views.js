@@ -135,6 +135,15 @@ function handleControls() {
 			() => initErrorView("Error gathering song data."));
 	});
 
+	$('.hideable-hidden, .hideable-shown').attr('tabindex', 0).attr('role', 'button');
+	$('.hideable .hideable-shown').hide();
+	$('.hideable-hidden').click(function(evt) {
+		$(this).hide().closest('.hideable').find('.hideable-shown').slideDown(400, 'easeOutCubic');
+	});
+	$('.hideable-shown').click(function(evt) {
+		$(this).hide().closest('.hideable').find('.hideable-hidden').show();
+	});
+
 	$('#lyrics-help-open').click(displayHelp);
 	$('#lyrics-help-close').click(hideHelp);
 	hideHelp();
