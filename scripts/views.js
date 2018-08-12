@@ -88,6 +88,7 @@ function initAnalysisView(track) {
 							<span>${entry.title}</span>
 							<span>${entry.html}</span>
 						</li>`);
+				updateHideables();
 			} else {
 				initErrorView("Sorry, there seem to be no lyrics to display.");
 			}
@@ -117,6 +118,32 @@ function hideHelp() {
 
 // General
 
+function handleHideableControls() {
+	$('body').on('click', '.hideable .hideable-hidden', function() {
+		$(this)
+			.prop('hidden', true)
+			.hide()
+			.closest('.hideable')
+			.find('.hideable-shown')
+			.prop('hidden', false)
+			.slideDown(400, 'easeOutCubic');
+	});
+	$('body').on('click', '.hideable .hideable-shown', function() {
+		$(this)
+			.prop('hidden', true)
+			.hide()
+			.closest('.hideable')
+			.find('.hideable-hidden')
+			.prop('hidden', false)
+			.show();
+	});
+}
+
+function updateHideables() {
+	$('.hideable-hidden, .hideable-shown').attr('tabindex', 0);
+	$('.hideable .hideable-shown').hide();
+}
+
 function handleControls() {
 	handleResultsViewControls();
 
@@ -135,14 +162,7 @@ function handleControls() {
 			() => initErrorView("Error gathering song data."));
 	});
 
-	$('.hideable-hidden, .hideable-shown').attr('tabindex', 0).attr('role', 'button');
-	$('.hideable .hideable-shown').hide();
-	$('.hideable-hidden').click(function(evt) {
-		$(this).hide().closest('.hideable').find('.hideable-shown').slideDown(400, 'easeOutCubic');
-	});
-	$('.hideable-shown').click(function(evt) {
-		$(this).hide().closest('.hideable').find('.hideable-hidden').show();
-	});
+	handleHideableControls();
 
 	$('#lyrics-help-open').click(displayHelp);
 	$('#lyrics-help-close').click(hideHelp);
