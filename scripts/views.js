@@ -84,7 +84,7 @@ function initAnalysisView(track) {
 				list.empty();
 				for(let entry of lyricsAnalysis(results.lyrics))
 					list.append(`
-						<li>
+						<li${entry.classes ? ` class="${entry.classes}"` : ''}>
 							<span>${entry.title}</span>
 							<span>${entry.html}</span>
 						</li>`);
@@ -140,7 +140,7 @@ function handleHideableControls() {
 }
 
 function updateHideables() {
-	$('.hideable-hidden, .hideable-shown').attr('tabindex', 0);
+	$('.hideable-hidden, .hideable-shown');
 	$('.hideable .hideable-shown').hide();
 }
 
