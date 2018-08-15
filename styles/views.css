@@ -117,12 +117,17 @@
 	justify-content: space-between;
 }
 
-#lyrics-analysis .track-analysis li > span:first-child {
-	
-}
-
 #lyrics-analysis .track-analysis li:nth-child(odd) {
 	background-color: #3A3A3A;
+}
+
+#lyrics-analysis .track-analysis table {
+	margin: 16px;
+}
+
+#lyrics-analysis .track-analysis td {
+	border: 1px #CCC solid;
+	padding: 8px;
 }
 
 /* Error View */
