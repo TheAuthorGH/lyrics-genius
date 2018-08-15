@@ -7,16 +7,11 @@ function charArray(string) {
 }
 
 // Returns a new array with only unique elements.
-function distinct(array, comparator) {
-	comparator = comparator || function(a, b) {return a === b;};
-	array = array.slice();
-	for(var e = 0; e < array.length; e++) {
-		for(var f = 0; f < array.length; f++) {
-			if(e != f && comparator(array[e], array[f]))
-				array.splice(e, 1);
-		}
-	}
-	return array;
+function distinct(array) {
+	const result = [];
+	for(let i of array)
+		if(!result.includes(i)) result.push(i);
+	return result;
 }
 
 function occurrences(array, item) {
