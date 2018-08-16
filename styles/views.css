@@ -126,8 +126,14 @@
 }
 
 #lyrics-analysis .track-analysis td {
-	border: 1px #CCC solid;
 	padding: 8px;
+}
+
+#lyrics-analysis .progressbar {
+	background-color: #733;
+	height: 12px;
+	border-radius: 5px;
+	margin: 8px;
 }
 
 /* Error View */
