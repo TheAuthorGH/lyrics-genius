@@ -3,7 +3,7 @@ function wordArray(string) {
 }
 
 function charArray(string) {
-	return string.split('');
+	return string.split('').filter(c => !c.match(/[\(\);,\. ]/));
 }
 
 // Returns a new array with only unique elements.
