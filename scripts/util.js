@@ -10,7 +10,7 @@ function charArray(string) {
 function distinct(array) {
 	const result = [];
 	for(let i of array)
-		if(!result.includes(i)) result.push(i);
+		if(result.indexOf(i) === -1) result.push(i);
 	return result;
 }
 
