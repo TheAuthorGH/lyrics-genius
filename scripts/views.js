@@ -31,7 +31,7 @@ function initResultsView(results) {
 	}
 	for(let track of results) {
 		view.append(`
-			<li trackid="${TRACKMANAGER.cache(track) - 1}">
+			<li trackid="${TRACKMANAGER.cache(track) - 1}" tabindex="0">
 				<div class="track-meta">
 					<span class="track-name">${track.name}</span>
 					<span class="track-artist">${track.artist}</span>
@@ -63,6 +63,11 @@ function handleResultsViewControls() {
 			updateSelectionControls();
 			button.toggleClass('selected');
 			button.find('span').toggleClass('fa-plus').toggleClass('fa-check');
+		})
+		.on('keyup', 'li', function(evt) {
+			evt.preventDefault();
+			if(evt.keyCode === 13)
+				$(this).click();
 		})
 		.on('click', 'li', function() {
 			initAnalysisView(TRACKMANAGER.cached($(this).closest('li').attr('trackid')));

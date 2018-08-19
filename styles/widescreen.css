@@ -13,7 +13,7 @@
 		cursor: pointer;
 	}
 	
-	#lyrics-results-list > li:hover {
+	#lyrics-results-list > li:hover, #lyrics-results-list > li:focus {
 		background-color: #444 !important;
 	}
 
