@@ -121,6 +121,14 @@
 	background-color: #3A3A3A;
 }
 
+#lyrics-analysis .track-analysis li.column {
+	flex-direction: column;
+}
+
+#lyrics-analysis .track-analysis li.column span:last-child {
+	align-self: center;
+}
+
 #lyrics-analysis .track-analysis table {
 	margin: 16px;
 }
