@@ -7,10 +7,13 @@ function charArray(string) {
 }
 
 // Returns a new array with only unique elements.
-function distinct(array) {
+function distinct(array, comparator) {
+	comparator = comparator || function(a, b) {
+		return a === b;
+	};
 	const result = [];
 	for(let i of array)
-		if(result.indexOf(i) === -1) result.push(i);
+		if(result.findIndex(o => comparator(o, i)) === -1) result.push(i);
 	return result;
 }
 
