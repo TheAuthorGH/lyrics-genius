@@ -127,6 +127,9 @@
 
 #lyrics-analysis .track-analysis li.column span:last-child {
 	align-self: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
 #lyrics-analysis .track-analysis table {
