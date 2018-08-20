@@ -91,6 +91,14 @@ main {
 	align-items: center;
 }
 
+/* Footer */
+
+footer {
+	color: #DDD;
+	font-size: 14px;
+	padding: 16px;
+}
+
 /* General Search Form */
 
 .lyrics-lookup {
