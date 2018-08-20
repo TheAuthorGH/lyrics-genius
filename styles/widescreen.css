@@ -17,7 +17,7 @@
 	#lyrics-welcome {
 		width: 100%;
 		height: 100%;
-		padding: 192px 0;
+		padding: 240px 0;
 		box-shadow: 0px 0px 1px 1px #999;
 		background: linear-gradient(rgba(50, 50, 50, 0.6), rgba(50, 50, 50, 0.8)), url('../images/homewp.jpeg');
 		background-size: cover;
