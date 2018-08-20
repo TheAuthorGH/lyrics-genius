@@ -94,9 +94,11 @@ main {
 /* Footer */
 
 footer {
-	color: #DDD;
+	border-top: 2px #844 solid;
+	color: #AAA;
 	font-size: 14px;
 	padding: 16px;
+	margin: 32px 0;
 }
 
 /* General Search Form */
