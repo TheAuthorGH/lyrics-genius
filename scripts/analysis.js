@@ -1,4 +1,4 @@
-function lyricsAnalysis(text) {
+function lyricsAnalysis(track, text) {
 	function entry(title, html, classes) {
 		return {title: title, html: html, classes: classes};
 	};
@@ -8,6 +8,8 @@ function lyricsAnalysis(text) {
 	const chars = charArray(text);
 	const charFrequency = frequency(chars);
 	return [
+		entry('Track Name', track.name),
+		entry('Track Author', track.artist),
 		entry('Lyrics', `
 			<button class="hideable-control"><span class="hideable-hidden">Show</span><span class="hideable-shown">Hide</span></button>
 			<p class="hideable-content track-lyrics">${text.replace(new RegExp('\n', 'g'), '<br>')}</p>

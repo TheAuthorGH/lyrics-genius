@@ -83,11 +83,9 @@ function initAnalysisView(track) {
 		results => {
 			if(results.lyrics) {
 				VIEWMANAGER.view(3);
-				view.find('.track-name').text(track.name);
-				view.find('.track-artist').text(track.artist);
 				const list = view.find('.track-analysis');
 				list.empty();
-				for(let entry of lyricsAnalysis(results.lyrics))
+				for(let entry of lyricsAnalysis(track, results.lyrics))
 					list.append(`
 						<li${entry.classes ? ` class="${entry.classes}"` : ''}>
 							<span>${entry.title}</span>
