@@ -105,10 +105,15 @@
 }
 
 #lyrics-analysis .track-meta {
-	font-weight: bold;
-	margin: 16px;
-	display: flex;
-	flex-direction: column;
+	text-align: center;
+	background-color: #733;
+	color: #FFF;
+	padding: 8px;
+	margin-top: 8px;
+}
+
+#lyrics-analysis .track-meta .track-name::after {
+	content: ' - ';
 }
 
 #lyrics-analysis .track-analysis li {
@@ -144,6 +149,12 @@
 #lyrics-analysis .track-analysis td, #lyrics-analysis .track-analysis th {
 	padding: 8px;
 	border: 1px #CCC solid;
+}
+
+#lyrics-analysis .track-analysis .track-lyrics {
+	padding: 8px 32px;
+	font-family: 'Courier New', Courier, Consolas;
+	text-align: center;
 }
 
 #lyrics-analysis .progressbar {
