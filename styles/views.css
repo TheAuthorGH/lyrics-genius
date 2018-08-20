@@ -134,10 +134,16 @@
 
 #lyrics-analysis .track-analysis table {
 	margin: 16px;
+	border-radius: 5px;
 }
 
-#lyrics-analysis .track-analysis td {
+#lyrics-analysis .track-analysis th {
+	font-weight: bold;
+}
+
+#lyrics-analysis .track-analysis td, #lyrics-analysis .track-analysis th {
 	padding: 8px;
+	border: 1px #CCC solid;
 }
 
 #lyrics-analysis .progressbar {
