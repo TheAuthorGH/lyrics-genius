@@ -5,7 +5,7 @@ APIKEYS = {
 
 const AJAXMANAGER = {
 	lyricsOvh: function(artist, song, done, fail) {
-		$.ajax({url: `https://api.lyrics.ovh/v1/${artist}/${song}`})
+		$.ajax({url: `https://api.lyrics.ovh/v1/${artist}/${song.replace(new RegExp("'", 'g'), '')}`})
 		.done(done)
 		.fail(fail);
 	},
