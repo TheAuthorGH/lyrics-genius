@@ -47,12 +47,20 @@
 	}
 
 	#lyrics-analysis h2 {
+		display: inline-block;
 		font-weight: lighter;
-		margin: 16px 0px;
-		border-bottom: 2px #844 solid;
 		font-size: 20px;
-		background-color: inherit;
+		background-color: #733;
 		text-align: left;
+		border-radius: 5px 5px 0px 0px;
+	}
+
+	#lyrics-analysis hr {
+		display: block;
+		width: 100%;
+		height: 4px;
+		background-color: #733;
+		margin-bottom: 16px;
 	}
 
 	#lyrics-analysis .track-analysis li {
