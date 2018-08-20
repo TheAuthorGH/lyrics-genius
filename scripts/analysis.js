@@ -23,6 +23,6 @@ function lyricsAnalysis(text) {
 			</table>
 		`, 'hideable column'),
 		entry('Characters', chars.length),
-		entry('Most Frequent Character', charFrequency[0].item)
+		entry('Most Common Character', charFrequency[0].item)
 	];
 }
