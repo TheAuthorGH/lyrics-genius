@@ -93,7 +93,7 @@ function initAnalysisView(track) {
 							<span>${entry.title}</span>
 							<span>${entry.html}</span>
 						</li>`);
-				updateHideables();
+				prepareHideables();
 			} else {
 				initErrorView("Sorry, there seem to be no lyrics to display.");
 			}
@@ -124,29 +124,31 @@ function hideHelp() {
 // General
 
 function handleHideableControls() {
-	$('body').on('click', '.hideable .hideable-hidden', function() {
-		$(this)
-			.prop('hidden', true)
-			.hide()
-			.closest('.hideable')
-			.find('.hideable-shown')
-			.prop('hidden', false)
-			.slideDown(400, 'easeOutCubic');
-	});
-	$('body').on('click', '.hideable .hideable-shown', function() {
-		$(this)
-			.prop('hidden', true)
-			.hide()
-			.closest('.hideable')
-			.find('.hideable-hidden')
-			.prop('hidden', false)
-			.show();
+	$('body').on('click', '.hideable .hideable-control', function() {
+		const button = $(this);
+		const container = button.closest('.hideable');
+		if(container.attr('hideable-status') === 'shown') {
+			container
+				.attr('hideable-status', 'hidden')
+				.find('.hideable-content').hide();
+			button.find('.hideable-shown').prop('hidden', true).hide();
+			button.find('.hideable-hidden').prop('hidden', false).show();
+		} else {
+			button.find('.hideable-shown').prop('hidden', false).show();
+			button.find('.hideable-hidden').prop('hidden', true).hide();
+			container
+				.attr('hideable-status', 'shown')
+				.find('.hideable-content').fadeIn(200);
+		}
 	});
 }
 
-function updateHideables() {
-	$('.hideable-hidden, .hideable-shown');
-	$('.hideable .hideable-shown').hide();
+function prepareHideables() {
+	$('.hideable')
+		.attr('hideable-status', 'hidden')
+		.find('.hideable-control')
+		.find('.hideable-shown').hide();
+	$('.hideable .hideable-content').prop('hidden', true).hide();
 }
 
 function handleControls() {
