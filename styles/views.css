@@ -104,16 +104,12 @@
 	width: 100%;
 }
 
-#lyrics-analysis .track-meta {
+#lyrics-analysis h2 {
 	text-align: center;
 	background-color: #733;
 	color: #FFF;
 	padding: 8px;
 	margin-top: 8px;
-}
-
-#lyrics-analysis .track-meta .track-name::after {
-	content: ' - ';
 }
 
 #lyrics-analysis .track-analysis li {
@@ -152,7 +148,7 @@
 }
 
 #lyrics-analysis .track-analysis .track-lyrics {
-	padding: 8px 32px;
+	padding: 8px 0;
 	font-family: 'Courier New', Courier, Consolas;
 	text-align: center;
 }
