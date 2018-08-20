@@ -26,7 +26,7 @@ function initResultsView(results) {
 	view.empty();
 	updateSelectionControls();
 	if(results.length === 0) {
-		initErrorView('Sorry, no results found! Please try something different!');
+		initErrorView('<span class=\"fas fa-question\" style=\"font-size: 64px; margin: 32px;\"></span><br/>Sorry, no results found! Please try something different!');
 		return;
 	}
 	for(let track of results) {
@@ -95,10 +95,10 @@ function initAnalysisView(track) {
 						</li>`);
 				prepareHideables();
 			} else {
-				initErrorView("Sorry, there seem to be no lyrics to display.");
+				initErrorView("Sorry, there seem to be no lyrics available for that track.");
 			}
 		},
-		() => initErrorView("Sorry, it seems we either can't gather lyrics data at the moment, or we could find no lyrics for that track.")
+		() => initErrorView("<span class=\"fas fa-exclamation-circle\" style=\"font-size: 64px; margin: 32px;\"></span><br/>Sorry, it seems we either can't gather lyrics data at the moment, or we could find no lyrics for that track.")
 	);
 }
 
@@ -108,7 +108,7 @@ function initAnalysisView(track) {
 
 function initErrorView(message) {
 	VIEWMANAGER.view(5);
-	$('#lyrics-error > p').text(message);
+	$('#lyrics-error > p').html(message);
 }
 
 // Help
@@ -161,12 +161,12 @@ function handleControls() {
 		AJAXMANAGER.musixmatch('track.search', {q: $(this).find('input[name="query"]').val() },
 			results => {
 				if(results.message.header.status_code != 200) {
-					initErrorView("Sorry, we can't gather song data right now.");
+					initErrorView("<span class=\"fas fa-exclamation-circle\" style=\"font-size: 64px; margin: 32px;\"></span><br/>Sorry, we can't gather song data right now.");
 					return;
 				}
 				initResultsView(results.message.body.track_list.map(t => new Track(t)));
 			},
-			() => initErrorView("Error gathering song data."));
+			() => initErrorView("<span class=\"fas fa-exclamation-circle\" style=\"font-size: 64px; margin: 32px;\"></span><br/>Error gathering song data."));
 	});
 
 	handleHideableControls();
