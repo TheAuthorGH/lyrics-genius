@@ -1,6 +1,7 @@
 // Not the safest way to store api keys!
 APIKEYS = {
-	musixmatch: '5c128ccc9a0073a5b9f5d79fda27e664'
+	musixmatch: '5c128ccc9a0073a5b9f5d79fda27e664',
+	youtube: 'AIzaSyBDOgStTqnuwvgK6_GkxD_CCd00ymR2X2A'
 }
 
 const AJAXMANAGER = {
@@ -21,6 +22,31 @@ const AJAXMANAGER = {
 			dataType: 'jsonp',
 			jsonpCallback: 'jsonpCallback',
 			contentType: 'application/json'
+		})
+		.done(done)
+		.fail(fail);
+	},
+	youtubeVideoLookup: function(query, results, done, fail) {
+		$.ajax({
+			url: 'https://www.googleapis.com/youtube/v3/search',
+			data: {
+				part: 'snippet',
+				key: APIKEYS['youtube'],
+				maxResults: results,
+				q: query
+			}
+		})
+		.done(done)
+		.fail(fail);
+	},
+	youtubeVideoDetails: function(videoId, done, fail) {
+		$.ajax({
+			url: 'https://www.googleapis.com/youtube/v3/videos',
+			data: {
+				part: 'contentDetails',
+				key: APIKEYS['youtube'],
+				id: videoId
+			}
 		})
 		.done(done)
 		.fail(fail);
