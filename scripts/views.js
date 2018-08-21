@@ -189,5 +189,9 @@ function handleControls() {
 
 	$('#lyrics-help-open').click(displayHelp);
 	$('#lyrics-help-close').click(hideHelp);
+	$('*').keyup(evt => {
+		if(evt.keyCode === 27)
+			hideHelp();
+	});
 	hideHelp();
 }

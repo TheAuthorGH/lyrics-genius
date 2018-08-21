@@ -226,6 +226,18 @@
 	margin-bottom: 16px;
 }
 
+#lyrics-help-open {
+	color: #DDD;
+	background-color: inherit;
+	padding: 0;
+	margin: 0;
+}
+
+#lyrics-help-open:hover {
+	color: #FFF;
+	background-color: inherit;
+}
+
 #lyrics-help-close {
 	position: absolute;
 	top: -22px;

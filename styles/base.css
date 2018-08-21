@@ -77,28 +77,6 @@ header h1 > a:hover {
 	color: #CCC;
 }
 
-/* Navigation */
-
-nav > ul {
-	display: flex;
-	justify-content: space-between;
-}
-
-nav > ul > li:not(:last-child) {
-	margin-right: 8px;
-}
-
-nav li {
-	text-decoration: none;
-	font-size: 18px;
-	color: #DDD;
-	cursor: pointer;
-}
-
-nav li:hover {
-	color: #FFF;
-}
-
 /* Main */
 
 main {
