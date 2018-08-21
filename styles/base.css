@@ -15,6 +15,14 @@ h1, h2, h3, h4 {
 	font-weight: bold;
 }
 
+em {
+	font-style: italic;
+}
+
+strong {
+	font-weight: bold;
+}
+
 input {
 	padding: 8px;
 	border: 1px #FFF solid;
