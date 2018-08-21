@@ -37,7 +37,7 @@ function initResultsView(results) {
 					<span class="track-artist">${track.artist}</span>
 				</div>
 				<div>
-					<button class="track-select" aria-label="select track for comparison"><span class="fas fa-plus"></span></button>
+					<button class="track-select" aria-label="select track for comparison" title="select track for comparison"><span class="fas fa-plus"></span></button>
 				</div>
 			</li>`);
 	}
