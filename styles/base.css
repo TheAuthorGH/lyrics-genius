@@ -90,6 +90,7 @@ main {
 /* Footer */
 
 footer {
+	order: 3;
 	max-width: 608px;
 	text-align: center;
 	line-height: 1.25;
