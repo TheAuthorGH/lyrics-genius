@@ -50,6 +50,7 @@
 		display: inline-block;
 		font-weight: lighter;
 		font-size: 20px;
+		margin-top: 8px;
 		background-color: #733;
 		text-align: left;
 		border-radius: 5px 5px 0px 0px;
@@ -75,6 +76,15 @@
 
 	#lyrics-analysis .track-analysis .track-lyrics {
 		padding: 8px 32px;
+	}
+
+	#lyrics-analysis .youtube-snippet {
+		margin: 8px 0;
+		border-radius: 5px;
+	}
+
+	#lyrics-analysis .youtube-snippet:hover {
+		background-color: #494949;
 	}
 
 }

@@ -29,6 +29,21 @@ function frequency(array) {
 	return result.sort((a, b) => b.frequency - a.frequency);
 }
 
-function formatDecimal(precision) {
-	return parseFloat(Math.round(precision * 100) / 100).toFixed(precision);
+function formatDecimal(number, precision) {
+	return parseFloat(Math.round(number * 100) / 100).toFixed(precision);
+}
+
+function parseDurationAsSeconds(string) {
+	const minutes = string.includes('M') ? Number(string.match(/[0-9]*M/)[0].replace('M', '')) : 0;
+	const seconds = string.includes('S') ? Number(string.match(/[0-9]S/)[0].replace('S', '')) : 0;
+	return minutes * 60 + seconds;
+}
+
+function formatSeconds(seconds) {
+	let minutes = 0;
+	while(seconds - 60 > 0) {
+		seconds -= 60;
+		minutes++;
+	}
+	return minutes + ':' + (seconds < 10 ? '0' + seconds : seconds);
 }

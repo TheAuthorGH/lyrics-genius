@@ -82,16 +82,34 @@ function initAnalysisView(track) {
 	AJAXMANAGER.lyricsOvh(track.artist, track.name,
 		results => {
 			if(results.lyrics) {
-				VIEWMANAGER.view(3);
-				const list = view.find('.track-analysis');
-				list.empty();
-				for(let entry of lyricsAnalysis(track, results.lyrics))
-					list.append(`
-						<li${entry.classes ? ` class="${entry.classes}"` : ''}>
-							<span>${entry.title}</span>
-							<span>${entry.html}</span>
-						</li>`);
-				prepareHideables();
+				AJAXMANAGER.youtubeVideoLookup(track.artist + ' ' + track.name, 1,
+				data => {
+					const ytsnippet = view.find('.youtube-snippet');
+					const item = data.items[0];
+					AJAXMANAGER.youtubeVideoDetails(item.id.videoId,
+						details => {
+							track.length = parseDurationAsSeconds(details.items[0].contentDetails.duration);
+
+							ytsnippet.attr('href', `https://www.youtube.com/watch?v=${item.id.videoId}`);
+							ytsnippet.find('.youtube-video-title').text(item.snippet.title);
+							ytsnippet.find('.youtube-video-length').text(formatSeconds(track.length));
+							ytsnippet.find('.youtube-video-thumbnail').attr('src', item.snippet.thumbnails.default.url);
+
+							VIEWMANAGER.view(3);
+							const list = view.find('.track-analysis');
+							list.empty();
+							for(let entry of lyricsAnalysis(track, results.lyrics))
+								list.append(`
+									<li${entry.classes ? ` class="${entry.classes}"` : ''}>
+										<span>${entry.title}</span>
+										<span>${entry.html}</span>
+									</li>`);
+							prepareHideables();
+						});
+				}, () => {
+
+				});
+
 			} else {
 				initErrorView("Sorry, there seem to be no lyrics available for that track.");
 			}
