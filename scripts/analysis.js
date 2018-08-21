@@ -14,6 +14,7 @@ function lyricsAnalysis(track, text) {
 			<button class="hideable-control"><span class="hideable-hidden">Show</span><span class="hideable-shown">Hide</span></button>
 			<p class="hideable-content track-lyrics">${text.replace(new RegExp('\n', 'g'), '<br>')}</p>
 		`, 'hideable column'),
+		entry('Estimated Duration', track.length),
 		entry('Words', words.length),
 		entry('Words (Unique)', wordsUnique.length),
 		entry('Monotony', formatDecimal(words.length / wordsUnique.length, 2)),
