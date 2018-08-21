@@ -18,6 +18,14 @@
 	margin: 16px 0px;
 }
 
+#lyrics-intro {
+	margin: 32px;
+	padding: 16px;
+	background-color: #444;
+	border-radius: 5px;
+	max-width: 608px;
+}
+
 /* Loading View */
 
 #lyrics-loading {
