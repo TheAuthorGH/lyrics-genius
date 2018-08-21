@@ -40,53 +40,30 @@
 	width: 100%;
 }
 
-#lyrics-results-header {
-	padding: 16px;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-}
-
-#lyrics-results-header h2 {
-	font-size: 18px;
-}
-
-#lyrics-selection-counter {
-	background-color: #444;
-	padding: 8px;
-	border-radius: 5px;
-}
-
-#lyrics-selection-counter > span {
-	margin: 4px;
-}
-
 #lyrics-results-list {
 	display: flex;
 	flex-direction: column;
 }
 
 #lyrics-results-list > li {
-	flex: 1;
-	display: flex;
-	justify-content: space-between;
-
-	padding: 8px;
-}
-
-#lyrics-results-list > li:nth-child(odd) {
 	background-color: #3A3A3A;
-}
+	padding: 16px;
+	margin: 16px 16px 0px 16px;
+	border: 2px #AAA solid;
+	border-radius: 5px;
+	cursor: pointer;
 
-#lyrics-results-list > li > div {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-around;
+	text-align: left;
+	justify-content: space-between;
+
 }
 
 #lyrics-results-list .track-name {
 	font-weight: bold;
 	font-size: 18px;
+	margin-bottom: 8px;
 }
 
 #lyrics-results-list .track-artist {
@@ -112,7 +89,7 @@
 	width: 100%;
 }
 
-#lyrics-analysis h2 {
+#lyrics-analysis h2, #lyrics-results h2 {
 	font-weight: 100;
 	text-align: center;
 	background-color: #733;

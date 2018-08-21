@@ -32,14 +32,10 @@ function initResultsView(results) {
 	for(let track of results) {
 		view.append(`
 			<li trackid="${TRACKMANAGER.cache(track) - 1}" tabindex="0">
-				<div class="track-meta">
-					<span class="track-name">${track.name}</span>
-					<span class="track-artist">${track.artist}</span>
-				</div>
-				<div>
-					<button class="track-select" aria-label="select track for comparison" title="select track for comparison"><span class="fas fa-plus"></span></button>
-				</div>
+				<span class="track-name">${track.name}</span>
+				<span class="track-artist">${track.artist}</span>
 			</li>`);
+			// <div><button class="track-select" aria-label="select track for comparison" title="select track for comparison"><span class="fas fa-plus"></span></button></div>
 	}
 }
 
@@ -117,8 +113,6 @@ function initAnalysisView(track) {
 		() => initErrorView("<span class=\"fas fa-exclamation-circle\" style=\"font-size: 64px; margin: 32px;\"></span><br/>Sorry, it seems we either can't gather lyrics data at the moment, or we could find no lyrics for that track.")
 	);
 }
-
-// Comparison
 
 // Errors
 

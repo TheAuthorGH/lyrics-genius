@@ -26,15 +26,15 @@
 	}
 
 	#lyrics-results-list > li {
-		background-color: inherit !important;
+		background-color: inherit;
 		box-shadow: 0 0 1px 1px #CCC;
+		border: 0;
 		border-radius: 5px;
 		margin: 8px 0px;
-		cursor: pointer;
 	}
 	
 	#lyrics-results-list > li:hover, #lyrics-results-list > li:focus {
-		background-color: #444 !important;
+		background-color: #444;
 	}
 
 	#lyrics-results-list .track-meta {
@@ -46,7 +46,7 @@
 		margin: 4px;
 	}
 
-	#lyrics-analysis h2 {
+	#lyrics-analysis h2, #lyrics-results h2 {
 		display: inline-block;
 		font-weight: lighter;
 		font-size: 20px;
@@ -56,7 +56,7 @@
 		border-radius: 5px 5px 0px 0px;
 	}
 
-	#lyrics-analysis hr {
+	hr {
 		display: block;
 		width: 100%;
 		height: 4px;
