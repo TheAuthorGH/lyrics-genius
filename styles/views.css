@@ -203,6 +203,19 @@
 	margin-bottom: 16px;
 }
 
+#lyrics-help ul, #lyrics-help ol {
+	margin: 16px 0px;
+	list-style-position: inside;
+}
+
+#lyrics-help ul {
+	list-style-type: disc;
+}
+
+#lyrics-help ol {
+	list-style-type: lower-alpha;
+}
+
 #lyrics-help-open {
 	color: #DDD;
 	background-color: inherit;

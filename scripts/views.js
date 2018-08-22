@@ -1,6 +1,7 @@
 const VIEWMANAGER = {
 	_id: 0,
 	view: function(id) {
+		this._id = id;
 		$(`.view-element[viewid*='${id}']`).show().prop('hidden', false);
 		$(`.view-element:not([viewid*='${id}'])`).hide().prop('hidden', true);
 	}
