@@ -39,7 +39,4 @@ const TRACKMANAGER = {
 	clearCache: function() {
 		this._cached.length = 0;
 	},
-	clearSelected: function() {
-		this._selected.length = 0;
-	}
 }
