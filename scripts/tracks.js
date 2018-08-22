@@ -1,7 +1,7 @@
 function Track(data) {
 	if(data.track) {
 		this.name = data.track.track_name;
-		this.artist = data.track.artist_name;
+		this.artist = data.track.artist_name.replace('Made famous by', '');
 	} else {
 		this.name = "Unknown Name";
 		this.artist = "Unknown Artist";
