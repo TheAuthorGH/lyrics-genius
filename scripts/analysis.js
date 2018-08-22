@@ -20,7 +20,7 @@ function lyricsAnalysis(track, text) {
 		entry('Estimated Duration', lengthAvailable ? formatSeconds(track.length) : 'Unavailable'),
 		entry('Words', words.length),
 		entry('Words (Unique)', wordsUnique.length),
-		entry('Monotony', formatDecimal(words.length / wordsUnique.length, 2)),
+		entry('Monotony Index', formatDecimal(words.length / wordsUnique.length, 2)),
 		entry('Common Words', `
 			<button class="hideable-control"><span class="hideable-hidden">Show</span><span class="hideable-shown">Hide</span></button>
 			<table class="hideable-content">
@@ -30,6 +30,7 @@ function lyricsAnalysis(track, text) {
 		`, 'hideable column'),
 		entry('Characters', chars.length),
 		entry('Most Common Character', charFrequency[0].item),
-		entry('Words per Minute', lengthAvailable ? formatDecimal(words.length/(track.length / 60), 2) : 'N/A')
+		entry('Words per Minute', lengthAvailable ? formatDecimal(words.length/(track.length / 60), 2) : 'N/A'),
+		entry('Unique Words per Minute', lengthAvailable ? formatDecimal(wordsUnique.length/(track.length / 60), 2) : 'N/A')
 	];
 }
