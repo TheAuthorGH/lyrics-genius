@@ -4,7 +4,7 @@
 
 ## See it in Action
 
-You can find a live demo for this app [here](https://theauthorgh.github.io/lyrics-genius/). If you can't get your song to work, please try searching "the dear hunter" and selecting the first result, which has been thoroughly tested and has always worked so far.
+You can find a live demo for this app [here](https://theauthorgh.github.io/lyrics-genius/). If you can't get your song to work, please try searching "lillian" by "the dear hunter" and selecting the first result, which has been thoroughly tested and has always worked so far.
 
 Lyrics Genius is optimized for both desktop and mobile, is fully useable with keyboard controls, and has been made with disabilities such as visual impairment and color blindness in mind.
 
