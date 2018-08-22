@@ -17,9 +17,11 @@ Lyrics Genius is optimized for both desktop and mobile, is fully useable with ke
 
 ## For Developers
 Developed using plain HTML, CSS and JavaScript. This app uses one or more APIs from the following services:
+
 * Musixmatch: for track lookup and metadata.
 * Lyrics.ovh: for lyrics.
 * YouTube: for other track data and convenient video suggestions.
+
 It is designed to be a prime example of proper third-party API usage. Lyrics Genius is free software, and you are encouraged to use it and its source code for your own purposes. See the license file for more information.
 
 ## About
