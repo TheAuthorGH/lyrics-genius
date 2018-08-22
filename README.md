@@ -8,6 +8,24 @@ You can find a live demo for this app [here](https://theauthorgh.github.io/lyric
 
 Lyrics Genius is optimized for both desktop and mobile, is fully useable with keyboard controls, and has been made with disabilities such as visual impairment and color blindness in mind.
 
+### Screenshots:
+
+![Screenshot of the Landing Page](https://github.com/TheAuthorGH/lyrics-genius/blob/master/screenshots/01.PNG?raw=true)
+
+The landing page.
+
+![Screenshot of the results for a search query](https://github.com/TheAuthorGH/lyrics-genius/blob/master/screenshots/02.PNG?raw=true)
+
+Results after searching for an artist name.
+
+![Screenshot of the analysis screen](https://github.com/TheAuthorGH/lyrics-genius/blob/master/screenshots/03.PNG?raw=true)
+
+The long-awaited analysis screen.
+
+![Screenshot of the help window](https://github.com/TheAuthorGH/lyrics-genius/blob/master/screenshots/04.PNG?raw=true)
+
+The help window, which you may open whenever you like. Its contents adapt to what you're doing at the moment.
+
 ## Usage Notes
 * This app relies heavily on JavaScript and on some ECMAScript 6 features, so unforntunately, support for Internet Explorer is not guaranteed, even if using the latest version.
 * Despite being a one-page web application, this app is designed to work only with a stable internet connection and therefore needs one at all times while in use. So if, for example, you download the app's source into your PC, expect it to malfunction if at any time access to the internet is compromised.
