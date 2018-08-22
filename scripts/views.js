@@ -25,7 +25,6 @@ function initResultsView(results) {
 	VIEWMANAGER.view(2);
 	const view = $('#lyrics-results-list');
 	view.empty();
-	updateSelectionControls();
 	if(results.length === 0) {
 		initErrorView('<span class=\"fas fa-question\" style=\"font-size: 64px; margin: 32px;\"></span><br/>Sorry, no results found! Please try something different!');
 		return;
@@ -36,31 +35,11 @@ function initResultsView(results) {
 				<span class="track-name">${track.name}</span>
 				<span class="track-artist">${track.artist}</span>
 			</li>`);
-			// <div><button class="track-select" aria-label="select track for comparison" title="select track for comparison"><span class="fas fa-plus"></span></button></div>
 	}
-}
-
-function updateSelectionControls() {
-	$('#lyrics-selection-counter').find('span').last().text(`${TRACKMANAGER.selected()}/${TRACKMANAGER.maxSelected()}`);
 }
 
 function handleResultsViewControls() {
 	$('#lyrics-results-list')
-		.on('click', '.track-select', function(evt) {
-			evt.stopPropagation();
-			const button = $(this);
-			const track = TRACKMANAGER.cached(button.closest('li').attr('trackid'));
-			if(!button.hasClass('selected')) {
-				if(!TRACKMANAGER.canSelect())
-					return;
-				TRACKMANAGER.select(track);
-			} else {
-				TRACKMANAGER.undoSelect(track);
-			}
-			updateSelectionControls();
-			button.toggleClass('selected');
-			button.find('span').toggleClass('fa-plus').toggleClass('fa-check');
-		})
 		.on('keyup', 'li', function(evt) {
 			evt.preventDefault();
 			if(evt.keyCode === 13)

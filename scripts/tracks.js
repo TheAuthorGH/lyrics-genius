@@ -12,8 +12,6 @@ function Track(data) {
 }
 
 const TRACKMANAGER = {
-	_selected: [],
-	_maxSelected: 4,
 	_cached: [],
 	cache: function(track) {
 		if(track && !this.cached(track)) {
@@ -33,28 +31,6 @@ const TRACKMANAGER = {
 		else if(typeof arg === 'object')
 			return Boolean(this._cached.find(t => t.equals(arg)));
 		return this._cached.length;
-	},
-	select: function(track) {
-		if(track && !this.selected(track))
-			this._selected.push(track);
-		return this.selected();
-	},
-	undoSelect: function(track) {
-		if(track)
-			this._selected.splice(this._selected.indexOf(track), 1);	
-	},
-	selected: function(arg) {
-		if(typeof arg === 'number' || typeof arg === 'string')
-			return this._cached[arg];
-		else if(typeof arg === 'object')
-			return Boolean(this._selected.find(t => t.equals(arg)));
-		return this._selected.length;
-	},
-	maxSelected: function() {
-		return this._maxSelected;
-	},
-	canSelect: function() {
-		return this.maxSelected() > this.selected();
 	},
 	clear: function() {
 		this.clearCache();
