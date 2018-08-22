@@ -12,9 +12,8 @@ Developed using plain HTML, CSS and JavaScript. This app uses one or more APIs f
 * Lyrics.ovh: for lyrics.
 * YouTube: for other track data and convenient video suggestions.
 
-
 ## Notes
-* This app relies heavily on JavaScript and on some EcmaScript 6 features, so unforntunately, support for Internet Explorer is not guaranteed, even if using the latest version.
+* This app relies heavily on JavaScript and on some ECMAScript 6 features, so unforntunately, support for Internet Explorer is not guaranteed, even if using the latest version.
 * Despite being a one-page web application, this app is designed to work only with a stable internet connection and therefore needs one at all times while in use. So if, for example, you download the app's source into your PC, expect it to malfunction if at any time access to the internet is compromised.
 * Please be aware that this app mixes various services to retrieve song information and lyrics data. Since these services are not necessarily meant to work well with one another, finding metadata for a track does not automatically guarantee you will find the appropiate lyrics for it as well, if any lyrics at all. In particular, please try to avoid tracks that contain ambiguous artists, such as those beginning with 'Made famous by', 'Cover by' or 'Ft. (artist)', because the lyrics engine is not always equipped to discern the right artist in such situations.
 * Because of the issue highlighted in the previous note, a feature to upload your own lyrics was in order. However, the point of the app is to showcase AJAX functionality, so this feature remains scrapped for now. It may be added in the future.
