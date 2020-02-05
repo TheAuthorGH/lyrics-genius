@@ -2,12 +2,6 @@
 
 *Lyrics Genius* is an entertainment app that takes the lyrics of your favorite songs to show you interesting facts about their lyrics. Simply look for a song name, an artist, or even specific lyrics and the app will try to find a matching track. Then, you may click on it to view a complete analysis of its lyrics.
 
-## See it in Action
-
-You can find a live demo for this app [here](https://theauthorgh.github.io/lyrics-genius/). If you can't get your song to work, please try searching "lillian" by "the dear hunter" and selecting the first result, which has been thoroughly tested and has always worked so far.
-
-Lyrics Genius is optimized for both desktop and mobile, is fully useable with keyboard controls, and has been made with disabilities such as visual impairment and color blindness in mind.
-
 ### Screenshots:
 
 ![Screenshot of the Landing Page](https://github.com/TheAuthorGH/lyrics-genius/blob/master/screenshots/01.PNG?raw=true)

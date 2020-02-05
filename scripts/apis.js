@@ -1,8 +1,9 @@
-// Not the safest way to store api keys!
+// TODO: Fill in these values for local testing purposes only.
+
 APIKEYS = {
-	musixmatch: '5c128ccc9a0073a5b9f5d79fda27e664',
-	youtube: 'AIzaSyBDOgStTqnuwvgK6_GkxD_CCd00ymR2X2A'
-}
+	musixmatch: '',
+	youtube: ''
+};
 
 const AJAXMANAGER = {
 	lyricsOvh: function(artist, song, done, fail) {
